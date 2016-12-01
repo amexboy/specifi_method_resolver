@@ -9,6 +9,9 @@ public class Main {
         DefaultResolver<Authentication, Void> defaultResolver = new DefaultResolver<>(new AuthenticationHandler());
 
         defaultResolver.resolve(new SpecificAuthentication());
+        
+        
+        defaultResolver.resolve(new BasicAuthentication());
 
     }
 }
