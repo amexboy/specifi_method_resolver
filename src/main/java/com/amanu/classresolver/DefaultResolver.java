@@ -102,13 +102,11 @@ public class DefaultResolver<T, R> implements Resolver<T, R> {
         }
 
         private int depthOfFrom(Class<?> target, Class<?> parameterType) {
-            int i = 0;
-
             if (null != target && parameterType.isAssignableFrom(target)) {
-                i = 1 + depthOfFrom(target.getSuperclass(), parameterType);
+                return 1 + depthOfFrom(target.getSuperclass(), parameterType);
             }
 
-            return i;
+            return 0;
         }
 
 
